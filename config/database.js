@@ -1,12 +1,12 @@
-'use strict'
+'use strict';
 
 /** @type {import('@adonisjs/framework/src/Env')} */
-const Env = use('Env')
-const Url = use('url-parse')
-const DATABASE_URL = new Url(Env.get('DATABASE_URL'))
+const Env = use('Env');
+const Url = use('url-parse');
+const DATABASE_URL = new Url(Env.get('DATABASE_URL'));
 
 /** @type {import('@adonisjs/ignitor/src/Helpers')} */
-const Helpers = use('Helpers')
+const Helpers = use('Helpers');
 
 module.exports = {
     /*
@@ -85,4 +85,4 @@ module.exports = {
         },
         debug: Env.get('DB_DEBUG', false)
     }
-}
+};
