@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +14,17 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route');
+const Route = use('Route')
 
 Route.get('/', () => {
-    return { greeting: 'Hello world from Phibi' };
-});
+    return { greeting: 'Hello world from Phibi' }
+})
 
-Route.post('auth/login', 'UserController.login').middleware('guest');
+Route.post('auth/login', 'UserController.login').middleware('guest')
 
 Route.get('countries', 'CountryController.search').middleware([
     'auth',
     'rateLimit'
-]);
+])
 
-Route.any('*', () => ({ success: false, message: 'Route does not exist' }));
+Route.any('*', () => ({ success: false, message: 'Route does not exist' }))
