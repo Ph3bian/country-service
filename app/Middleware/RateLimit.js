@@ -34,11 +34,12 @@ class RateLimit {
             return
         }
 
-        if (used_count > 30) {
-            return response.badRequest(
-                `Too many requests. Please try again in ${60 -
-                    diffInSeconds} seconds.`
-            )
+        if (used_count > 3) {
+            return response.badRequest({
+                success:false,
+                message:`Too many requests. Please try again in ${60 -
+                    diffInSecs} seconds.`
+                })
         }
 
         await Redis.set(
