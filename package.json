@@ -7,8 +7,7 @@
     "scripts": {
         "start": "node server.js",
         "test": "node ace test",
-        "prettier": "prettier --write './**/*.{js,json}'",
-        "migrate": "node ace migration:run --force"
+        "prettier": "prettier --write './**/*.{js,json}'"
     },
     "keywords": [
         "adonisjs",

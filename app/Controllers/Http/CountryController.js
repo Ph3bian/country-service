@@ -19,7 +19,7 @@ class CountryController {
         if (!search) {
             return response.badRequest({
                 success: false,
-                message: 'Invalid search parameter.'
+                message: 'Invalid search parameter'
             })
         }
 

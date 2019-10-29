@@ -17,7 +17,7 @@
 const Route = use('Route')
 
 Route.get('/', () => {
-    return { greeting: 'Hello world from Phibi' }
+    return { success: true, message: 'Hello world from Phibi' }
 })
 
 Route.post('auth/login', 'UserController.login').middleware('guest')
@@ -27,4 +27,6 @@ Route.get('countries', 'CountryController.search').middleware([
     'rateLimit'
 ])
 
-Route.any('*', () => ({ success: false, message: 'Route does not exist' }))
+Route.any('*', ({ response }) =>
+    response.badRequest({ success: false, message: 'Route does not exist' })
+)
