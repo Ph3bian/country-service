@@ -42,10 +42,14 @@ class CountryController {
 
             return {
                 success: true,
-                fullName: country.name,
-                population: country.population,
-                currencies: currencies,
-                exchangeRates: exchangeData.rates
+                message: 'Success! country found',
+                body: {
+                    id: parseInt((Math.random() * 10000).toFixed(), 10),
+                    fullName: country.name,
+                    population: country.population,
+                    currencies: currencies,
+                    ...exchangeData.rates
+                }
             }
         } catch (error) {
             return response.badRequest({

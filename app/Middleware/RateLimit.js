@@ -34,7 +34,7 @@ class RateLimit {
             return
         }
 
-        if (used_count > 3) {
+        if (used_count > 30) {
             return response.badRequest({
                 success: false,
                 message: `Too many requests. Please try again in ${60 -
