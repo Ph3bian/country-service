@@ -1,28 +1,38 @@
-# Adonis API application
+# Country Lookup Service
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+Allows user look up a country by name and returns the full name, population and a list of its official currencies including current exchange rate to EUR
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
+## Endpoints
 
-## Setup
+[COUNTRY LOOKUP](http://anyfin-api.ph3bian.com)
 
-Use the adonis command to install the blueprint
+- POST /auth​/login (User log in)
 
-```bash
-adonis new yardstick --api-only
-```
+- GET /countries?search={countryName} (Get country details from country name)
 
-or manually clone the repo and then run `npm install`.
+## Project Description (User Stories)
+
+- User can look up a country by name and returns the full name, population and a list of its official currencies including current exchange rate to EUR
+
+- User can view a list of starships, list item should contain name, model and cargo capacity.
+- User requests should require a valid JWT obtained from a separate /login endpoint and should be rate limited to 30 requests per token per minute
 
 
-### Migrations
 
-Run the following command to run startup migrations.
 
-```js
-adonis migration:run
-```
+## Technologies Used
+
+Built on the AdonisJs, AdonisJs is a Node.js web framework.
+
+Install the adonis cli using the command npm install -g @adonisjs/cli
+
+Clone repository
+Install npm dependencies
+Run migrations using command adonis migration:run
+Run seeders using command adonis seed
+Run application using adonis serve --dev
+Run application tests using adonis test
+
+For more information 
+
+[ADONISJS](https://adonisjs.com/)
