@@ -1,6 +1,7 @@
 'use strict'
 
 const { test, trait } = use('Test/Suite')('User')
+const Factory = use('Factory')
 
 trait('Test/ApiClient')
 
@@ -40,11 +41,13 @@ test('can login failed', async ({ client }) => {
 })
 
 test('can login successfully', async ({ assert, client }) => {
+    const user = await Factory.model('App/Models/User').create()
+
     const response = await client
         .post('/auth/login')
         .send({
-            email: 'phebianchukwurah@gmail.com',
-            password: 'password'
+            email: user.email,
+            password: 'password123'
         })
         .end()
 
