@@ -19,19 +19,28 @@ Allows user look up a country by name and returns the full name, population and 
 
 
 
+
 ## Technologies Used
 
 Built on the AdonisJs, AdonisJs is a Node.js web framework.
 
-Install the adonis cli using the command npm install -g @adonisjs/cli
+-Install the adonis cli using the command npm install -g @adonisjs/cli
 
-Clone repository
-Install npm dependencies
-Run migrations using command adonis migration:run
-Run seeders using command adonis seed
-Run application using adonis serve --dev
-Run application tests using adonis test
+-Clone repository
 
-For more information 
 
-[ADONISJS](https://adonisjs.com/)
+-Install npm dependencies
+
+
+-Run migrations using command adonis migration:run
+
+
+-Run seeders using command adonis seed
+
+
+-Run application using adonis serve --dev
+
+
+-Run application tests using adonis test
+
+For more information visit [AdonisJs](https://adonisjs.com/)
