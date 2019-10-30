@@ -35,7 +35,7 @@ Built on the AdonisJs, AdonisJs is a Node.js web framework.
 - Run migrations using command adonis migration:run
 
 
--Run seeders using command adonis seed
+- Run seeders using command adonis seed
 
 
 - Run application using adonis serve --dev
