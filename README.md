@@ -14,7 +14,6 @@ Allows user look up a country by name and returns the full name, population and 
 
 - User can look up a country by name and returns the full name, population and a list of its official currencies including current exchange rate to EUR
 
-- User can view a list of starships, list item should contain name, model and cargo capacity.
 - User requests should require a valid JWT obtained from a separate /login endpoint and should be rate limited to 30 requests per token per minute
 
 
