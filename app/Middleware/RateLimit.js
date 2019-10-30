@@ -17,6 +17,14 @@ class RateLimit {
 
         let tokenData = await Redis.get(token)
         tokenData = JSON.parse(tokenData)
+        if (!tokenData) {
+            response.unauthorized({
+                success: false,
+                message: `Invalid token`
+            })
+            return
+        }
+
         let { first_used, used_count } = tokenData
         const diffInSecs = DiffInSecs(new Date(), new Date(first_used))
 

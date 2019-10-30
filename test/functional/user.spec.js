@@ -5,16 +5,17 @@ const Factory = use('Factory')
 
 trait('Test/ApiClient')
 
-test('User does not exist', async ({ client }) => {
+test('User can not login with invalid email provided', async ({ client }) => {
     const response = await client
         .post('/auth/login')
         .send({
-            email: 'phebianchukwurah@gmail.com1',
-            password: 'password1'
+            email: 'phebz@gmail.com1',
+            password: 'password'
         })
         .end()
 
     response.assertStatus(401)
+
     response.assertJSONSubset([
         {
             field: 'email',
@@ -23,7 +24,7 @@ test('User does not exist', async ({ client }) => {
     ])
 })
 
-test('can login failed', async ({ client }) => {
+test('User can not login with no password provided', async ({ client }) => {
     const response = await client
         .post('/auth/login')
         .send({
@@ -40,7 +41,10 @@ test('can login failed', async ({ client }) => {
     ])
 })
 
-test('can login successfully', async ({ assert, client }) => {
+test('User can login successfully with valid credentials', async ({
+    assert,
+    client
+}) => {
     const user = await Factory.model('App/Models/User').create()
 
     const response = await client
