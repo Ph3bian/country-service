@@ -4,7 +4,7 @@ Allows user look up a country by name and returns the full name, population and 
 
 ## Endpoints
 
-[COUNTRY LOOKUP](http://anyfin-api.ph3bian.com)
+API URL: [COUNTRY LOOKUP API](http://anyfin-api.ph3bian.com)
 
 - POST /auth​/login (User log in)
 
