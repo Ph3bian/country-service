@@ -48,7 +48,7 @@ class CountryController {
                     fullName: country.name,
                     population: country.population,
                     currencies: currencies,
-                    ...exchangeData.rates
+                    exchangeRates: Object.values(exchangeData.rates)
                 }
             }
         } catch (error) {
