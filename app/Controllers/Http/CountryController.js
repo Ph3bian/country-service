@@ -40,16 +40,21 @@ class CountryController {
                 `${this.exchangeRatesApiUrl}?access_key=${this.exchangeAccessKey}&base=EUR&symbols=${currencies}`
             )
 
+            const currency = country.currencies.map(currency => ({
+                ...currency,
+                rate: exchangeData.rates[currency.code]
+            }))
+
             return {
                 success: true,
                 message: 'Success! country found',
                 body: {
-                    id: parseInt((Math.random() * 10000).toFixed(), 10),
+                    id: parseInt((Math.random() * 10005).toFixed(), 10),
                     fullName: country.name,
                     population: country.population,
-                    formattedCurrency: currencies,
-                    currency: country.currencies,
-                    exchangeRates: Object.values(exchangeData.rates)
+                    formattedCurreny: currencies,
+                    currency: currency,
+                    exchangeRates: exchangeData.rates
                 }
             }
         } catch (error) {
