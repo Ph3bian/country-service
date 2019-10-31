@@ -47,7 +47,8 @@ class CountryController {
                     id: parseInt((Math.random() * 10000).toFixed(), 10),
                     fullName: country.name,
                     population: country.population,
-                    currencies: currencies,
+                    formattedCurrency: currencies,
+                    currency: country.currencies,
                     exchangeRates: Object.values(exchangeData.rates)
                 }
             }
